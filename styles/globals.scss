@@ -1,0 +1,195 @@
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1000px,
+  xxl: 1100px
+);
+$primary:rgba(3, 7, 18, 1);
+@import '~bootstrap/scss/bootstrap';
+
+/* Color styles */
+$neutral--100: rgba(3, 7, 18, 1);
+$neutral--90: rgba(17, 24, 39, 1);
+$neutral--80: rgba(31, 41, 55, 1);
+$neutral--70: rgba(55, 65, 81, 1);
+$neutral--60: rgba(75, 85, 99, 1);
+$neutral--50: rgba(107, 114, 128, 1);
+$neutral--40: rgba(174, 178, 186, 1);
+$neutral--30: rgba(209, 213, 219, 1);
+$neutral--20: rgba(229, 231, 235, 1);
+$neutral--10: rgba(249, 250, 251, 1);
+$neutral--0: rgba(255, 255, 255, 1);
+
+/* Text-size styles */
+/* base size: body--14px---regular (14px) */
+$display-1: 2.57rem;
+$heading---mobile---h1: 3.65719rem;
+$heading---mobile---h2: 3.5rem;
+$heading---mobile---h3: 3rem;
+$heading---mobile---h4: 2.5rem;
+$heading---mobile---h5: 2rem;
+
+$heading---desktop---h1: 6.5rem;
+$heading---desktop---h2: 4.5rem;
+$heading---desktop---h3: 4rem;
+$heading---desktop---h4: 3.5rem;
+$heading---desktop---h5: 2.5rem;
+$heading---desktop---h6: 2rem;
+
+$body--28px---semi-bold: 1.75rem;
+$body--28px---medium: 1.75rem;
+$body--28px---regular: 1.75rem;
+$body--22px---semi-bold: 1.38rem;
+$body--22px---medium: 1.38rem;
+$body--22px---regular: 1.38rem;
+$body--18px---semi-bold: 1.125rem;
+$body--18px---medium: 1.125rem;
+$body--18px---regular: 1.125rem;
+$body--16px---semi-bold: 1rem;
+$body--16px---medium: 1rem;
+$body--16px---regular: 1rem;
+$body--14px---semi-bold: 0.875rem;
+$body--14px---medium: 0.875rem;
+$body--14px---regular: 0.875rem;
+$body--14px---link: 0.875rem;
+$body--12px---regular: 0.75rem;
+$body--12px---semi-bold: 0.75rem;
+$body--12px---medium: 0.75rem;
+
+/* Effect styles */
+$shadow:  0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+$border--radius: 0.5rem;
+
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: $neutral--100;
+  background-color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+  font-style: normal;
+  font-weight: 600;
+  line-height: 105%;
+  letter-spacing: -0.07rem;
+}
+h1{
+  font-size: $heading---desktop---h1;
+  font-weight: 700;
+  line-height: 100%;
+}
+h2{
+  font-size: $heading---desktop---h2;
+}
+h3{
+  font-size: $heading---desktop---h3;
+}
+h4{
+  font-size: $heading---desktop---h4;
+}
+h5{
+  font-size: $heading---desktop---h5;
+}
+h6{
+  font-size: $heading---desktop---h6;
+}
+p{
+  font-size: $body--18px---regular;
+  color: $neutral--70;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.6875rem */
+  letter-spacing: 0.00875rem;
+  &.xxl{
+    font-size: $body--28px---regular;
+    font-weight: 400;
+    line-height: 130%; /* 1.7875rem */
+  }
+  &.xl{
+    font-size: $body--22px---regular;
+    font-weight: 400;
+    line-height: 130%; /* 1.7875rem */
+  }
+  &.l{
+    font-size: $body--18px---regular;
+    font-weight: 400;
+    line-height: 130%; /* 1.7875rem */
+  }
+  &.s{
+    font-size: $body--14px---regular;
+  }
+  &.xs{
+    font-size: $body--12px---regular;
+  }
+  &.medium{
+    font-weight: 500;
+  }
+  &.semibold{
+    font-weight: 600;
+  }
+  &.bold{
+    font-weight: 700;
+  }
+}
+.highlight{
+  color: $neutral--40;
+}
+.hidden{
+  opacity: 0;
+}
+w-auto{
+  width:auto;
+}
+.card{
+  box-shadow: $shadow;
+  border-radius: $border--radius;
+  border-color: $neutral--20;
+  .color-preview{
+    width: 100%;
+    height: 160px;
+    border-top-left-radius: $border--radius;
+    border-top-right-radius: $border--radius;
+    &.neutral-100{
+      background-color: $neutral--100;
+    }
+    &.neutral-90{
+      background-color: $neutral--90;
+    }
+    &.neutral-80{
+      background-color: $neutral--80;
+    }
+    &.neutral-70{
+      background-color: $neutral--70;
+    }
+    &.neutral-60{
+      background-color: $neutral--60;
+    }
+    &.neutral-50{
+      background-color: $neutral--50;
+    }
+    &.neutral-40{
+      background-color: $neutral--40;
+    }
+    &.neutral-30{
+      background-color: $neutral--30;
+    }
+    &.neutral-20{
+      background-color: $neutral--20;
+    }
+    &.neutral-10{
+      background-color: $neutral--10;
+    }
+    &.neutral-0{
+      background-color: $neutral--0;
+    }
+  }
+}
