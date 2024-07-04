@@ -13,7 +13,7 @@ export default function Home() {
         <div className='container-fluid my-5 pt-5'>
           <div className='row'>
             <h3>Hi.</h3>
-            <p className='xxl light'>I work with UX & Graphic design <a href='http://djakne.com'>here</a>. In my spare time I like to play atound with various creative projects. At the moment I am learning to how to photograph.</p>
+            <p className='xxl light'>I work with UX & Graphic design <a href='http://djakne.com'>here</a>. In my spare time I like to play around with various creative projects. At the moment I am learning to how to photograph.</p>
             <div className='d-flex justify-content-between align-items-center my-5'>
               <div>
               <a className='btn btn-primary me-2 btn-lg' href="mailto:s.sjoblom@gmail.com">Contact</a>
