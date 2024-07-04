@@ -16,8 +16,8 @@ export default function Home() {
             <p className='xxl light'>I work with UX & Graphic design <a href='http://djakne.com'>here</a>. In my spare time I like to play around with various creative projects. At the moment I am learning to how to photograph.</p>
             <div className='d-flex justify-content-between align-items-center my-5'>
               <div>
-              <a className='btn btn-primary me-2 btn-lg' href="mailto:s.sjoblom@gmail.com">Contact</a>
-              <a className='btn btn-primary me-2 btn-lg' href="https://www.instagram.com/snabb.studio/">Instagram</a>
+              <a className='btn btn-primary me-2 btn-lg mb-2' href="mailto:s.sjoblom@gmail.com">Contact</a>
+              <a className='btn btn-primary me-2 btn-lg mb-2' href="https://www.instagram.com/snabb.studio/">Instagram</a>
               </div>
               <p className='xl mt-3 col-6'></p>
             </div>
