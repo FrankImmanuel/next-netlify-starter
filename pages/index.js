@@ -1,16 +1,17 @@
 import Head from 'next/head'
 import Footer from '@components/Footer'
+import Insta from '@components/Instagram'
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <Head>
         <title>Next.js Starter!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='d-flex justify-content-start align-items-start flex-column'>
 
-        <div className='container-fluid my-5 pt-5'>
+        <div className='container my-5 pt-5'>
           <div className='row'>
             <h3>Hi.</h3>
             <p className='xxl light'>I work with UX & Graphic design <a href='http://djakne.com'>here</a>. In my spare time I like to play around with various creative projects. At the moment I am learning to how to photograph.</p>
@@ -22,6 +23,9 @@ export default function Home() {
               <p className='xl mt-3 col-6'></p>
             </div>
           </div>
+        </div>
+        <div className="container-fluid">
+        <Insta/>
         </div>
       </main>
     </div>

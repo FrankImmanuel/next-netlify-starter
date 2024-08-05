@@ -8,6 +8,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
     "bootstrap": "^5.3.2",
     "cypress": "^10.0.3",
     "eslint-config-next": "^13.4.19",
