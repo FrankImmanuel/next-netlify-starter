@@ -25,7 +25,6 @@ export default function Home() {
           </div>
         </div>
         <div className="container-fluid">
-        <Insta/>
         </div>
       </main>
     </div>
