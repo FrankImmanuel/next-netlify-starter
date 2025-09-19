@@ -31,12 +31,12 @@ $heading---mobile---h3: 3rem;
 $heading---mobile---h4: 2.5rem;
 $heading---mobile---h5: 2rem;
 
-$heading---desktop---h1: 6.5rem;
-$heading---desktop---h2: 4.5rem;
-$heading---desktop---h3: 4rem;
-$heading---desktop---h4: 3.5rem;
-$heading---desktop---h5: 2.5rem;
-$heading---desktop---h6: 2rem;
+$heading---desktop---h1: 8vw;
+$heading---desktop---h2: 6vw;
+$heading---desktop---h3: 4vw;
+$heading---desktop---h4: 3vw;
+$heading---desktop---h5: 2vw;
+$heading---desktop---h6: 1vw;
 
 $body--28px---semi-bold: 1.75rem;
 $body--28px---medium: 1.75rem;
@@ -78,13 +78,12 @@ body {
 }
 h1,h2,h3,h4,h5,h6{
   font-style: normal;
-  font-weight: 600;
+  font-weight: 900;
   line-height: 105%;
-  letter-spacing: -0.07rem;
+  text-transform: uppercase;
 }
 h1{
   font-size: $heading---desktop---h1;
-  font-weight: 700;
   line-height: 100%;
 }
 h2{
@@ -149,6 +148,21 @@ p{
 w-auto{
   width:auto;
 }
+img.landscape{
+  max-width: 2400px;
+  height: auto;
+  margin: auto;
+}
+img.portrait{
+  max-width: 1680px;
+  height: auto;
+  margin: auto;
+}
+.custom-max-width{
+  margin: auto;
+  max-width: 2400px;
+}
+
 .card{
   box-shadow: $shadow;
   border-radius: $border--radius;
@@ -192,4 +206,34 @@ w-auto{
       background-color: $neutral--0;
     }
   }
+}
+
+@media (max-width: 720px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: $heading---mobile---h1;
+  }
+  h2 {
+    font-size: $heading---mobile---h2;
+  }
+  h3 {
+    font-size: $heading---mobile---h3;
+  }
+  h4 {
+    font-size: $heading---mobile---h4;
+  }
+  h5 {
+    font-size: $heading---mobile---h5;
+  }
+
+  .custom-max-width {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
 }

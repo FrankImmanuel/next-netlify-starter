@@ -13,7 +13,7 @@ const inter_tight = Inter_Tight({
 
 function Application({ Component, pageProps }) {
   return (
-    <main className={GeistSans.className}>
+    <main className={inter_tight.className}>
       <Component {...pageProps} />
     </main>
   )
