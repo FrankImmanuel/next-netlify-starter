@@ -149,18 +149,27 @@ w-auto{
   width:auto;
 }
 img.landscape{
+  width: 100%;
   max-width: 2400px;
   height: auto;
   margin: auto;
 }
 img.portrait{
-  max-width: 1680px;
+   width: 100%;
+  max-width: 1728px;
   height: auto;
   margin: auto;
 }
 .custom-max-width{
   margin: auto;
   max-width: 2400px;
+}
+.hero{
+  font-size: 3.5vw;
+  letter-spacing: -3%;
+  line-height: 100%;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .card{
@@ -208,7 +217,7 @@ img.portrait{
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 540px) {
   html,
   body {
     font-size: 14px;

@@ -28,20 +28,23 @@ export default function Home() {
           `}</script>   
       </Head>
       <main className="d-flex justify-content-start align-items-start flex-column">
-        <div className="flex-container my-5 pt-5 custom-max-width">
+        <div className="flex-container mb-5 custom-max-width">
           <div className="row">
+            <div class="hero my-5">
+              Snabb studio
+            </div>
             <h1>
-              Snabb.studio — pointing a camera at stuff that looks less boring
+               — pointing a camera at stuff that looks less boring
               since 2023
             </h1>
             <img
-              className="py-3 py-md-5 landscape"
+              className="py-3 pt-md-5 landscape"
               src="./A7C00699.jpg"
               class="img-fluid"
               alt="Boy walking up"
             />
             <img
-              className="py-3 py-md-5 landscape"
+              className="py-3 pb-md-5 landscape"
               src="./A7C00672.jpg"
               class="img-fluid"
               alt="Boy in sunshine"
@@ -85,6 +88,32 @@ export default function Home() {
               class="img-fluid"
               alt="Corgi - AMC Pacer toy car"
             />
+            <h3 className="pt-5">
+              Tasked by <a href="https://kolossal.se/" target="_blank">Kolossal</a> to point my camera at the new <a href="https://www.kadodrinks.se/" target="_blank">Kado Drinks</a> ’s fresh design.</h3>
+            <img
+              className="py-3 landscape"
+              src="./A7C00133.jpg"
+              class="img-fluid"
+              alt="Foggy bridge"
+            />
+            <div class="row justify-content-start mb-5">
+            <div class="col-6 mb-5">
+              <img
+              className="py-3 landscape"
+              src="./A7C00248.jpg"
+              class="img-fluid"
+              alt="Foggy bridge"
+            />
+            </div>
+             <div class="col-6 mb-5">
+              <img
+              className="py-3 landscape"
+              src="./A7C00260.jpg"
+              class="img-fluid"
+              alt="Foggy bridge"
+            />
+            </div>
+          </div>
             <h1 className="pt-5">
               Fog makes the world softer. The camera makes it stay.
             </h1>
