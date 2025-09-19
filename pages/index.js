@@ -1,13 +1,31 @@
 import Head from "next/head";
-import Footer from "@components/Footer";
-import Insta from "@components/Instagram";
+
 
 export default function Home() {
   return (
     <div className="container-fluid">
       <Head>
-        <title>Next.js Starter!</title>
+        <title>Snabb Studio | "Artsy" Photography of Unplanned Moments</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Snabb Studio is not a typical photography service. I capture unplanned, everyday moments with humor, honesty, and a touch of fog. Follow along for artistic photography that notices what others miss."/>
+        <meta property="og:title" content="Snabb Studio | Artistic Photography of Unplanned Moments"/>
+        <meta property="og:description" content="I don’t take assignments. I just point the camera at things that look less boring than me."/>
+        <meta property="og:image" content="https://snabb.studio/A7C00885.jpg"/>
+        <meta property="og:url" content="https://snabb.studio"/>
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Snabb Studio",
+            "alternateName": "snabb.studio",
+            "jobTitle": "Photographer / Artist",
+            "description": "I capture unplanned, everyday moments with humor, honesty, and a touch of fog.",
+            "url": "https://snabb.studio",
+            "sameAs": [
+              "https://www.instagram.com/yourhandle"
+            ]
+          }
+          `}</script>   
       </Head>
       <main className="d-flex justify-content-start align-items-start flex-column">
         <div className="flex-container my-5 pt-5 custom-max-width">
@@ -93,19 +111,19 @@ export default function Home() {
         <div class="container-fluid custom-max-width">
           <div class="row justify-content-end py-5">
             <div class="col-9">
-              <h2 className="pt-5 text-right">
+              <h4 className="pt-5">
                 This site is like me — slow to update.{" "}
                 <a href="https://www.instagram.com/snabb.studio/">Instagram</a>{" "}
                 is quicker, but only a little.
-              </h2>
+              </h4>
             </div>
           </div>
           <div class="row justify-content-start py-5 mb-5">
-            <div class="col-9 mb-5">
-              <h2 className="pt-5 mb-5">
+            <div class="col-7 mb-5">
+              <h4 className="pt-5 mb-5">
               <a href="mailto:s.sjoblom@gmail.com">Send me a message.</a> I’ll
                 probably answer faster than a toy car in the fog.
-              </h2>
+              </h4>
             </div>
           </div>
 
