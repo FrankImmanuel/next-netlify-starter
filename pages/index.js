@@ -155,8 +155,12 @@ export default function Home() {
               </h4>
             </div>
           </div>
-
         </div>
+        <div className="container-fluid text-center py-3">
+          <div class="row justify-content-center">
+          <p className="text-center s">© 2025 Snabb Studio. All rights reserved. Photos on this website are for personal viewing only. Any commercial use, reproduction, or distribution is prohibited without written permission. <a href="mailto:s.sjoblom@gmail.com">Contact</a> for licensing inquiries.</p>
+          </div>
+        </div>  
       </main>
     </div>
   );
