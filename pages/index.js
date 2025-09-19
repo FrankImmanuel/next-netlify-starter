@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="container-fluid">
       <Head>
-        <title>Snabb Studio | "Artsy" Photography of Unplanned Moments</title>
+        <title>Snabb Studio | Simple Photography of Unplanned Moments</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Snabb Studio is not a typical photography service. I capture unplanned, everyday moments with humor, honesty, and a touch of fog. Follow along for artistic photography that notices what others miss."/>
         <meta property="og:title" content="Snabb Studio | Artistic Photography of Unplanned Moments"/>
