@@ -1,0 +1,29 @@
+.imageContainer {
+  position: relative;
+}
+.miniatureAbsoluteContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.spacer {
+  height: calc(100% - 200px);
+}
+.miniature {
+  margin: 0;
+  position: sticky;
+  height: 200px;
+  bottom: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.miniature:hover {
+  opacity: 0;
+}
+
+@media (max-width: 1024px) {
+  .miniatureAbsoluteContainer {
+    display: none;
+    visibility: hidden;
+  }
+}

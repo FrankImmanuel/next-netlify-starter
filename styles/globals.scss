@@ -168,8 +168,30 @@ img.portrait{
   font-size: 3.5vw;
   letter-spacing: -3%;
   line-height: 100%;
-  font-weight: 800;
+  font-weight: 900;
   text-transform: uppercase;
+}
+.image-container{
+  position: relative;
+  .miniature-absolute-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    .spacer{
+      height: calc(100% - 216px);
+    }
+      .miniature{
+        margin: 20px;
+        position: sticky;
+        height: 200px;
+        bottom: 0;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      &:hover{
+        opacity: 0;
+      }
+    }
+  }
 }
 
 .card{

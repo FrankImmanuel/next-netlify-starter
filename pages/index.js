@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ImageComponent from "@components/ImageComponent";
 
 export default function Home() {
   return (
@@ -42,56 +43,56 @@ export default function Home() {
             <h1>
               — pointing a camera at stuff that looks less boring since 2023
             </h1>
-            <img
-              className="py-3 pt-md-5 landscape"
-              src="./A7C00699.jpg"
-              
-              alt="Boy walking up"
+            <ImageComponent
+              image="./A7C00699.jpg"
+              altText="Boy walking up"
+              orientation="landscape"
             />
-            <img
-              className="py-3 pb-md-5 landscape"
-              src="./A7C00672.jpg"
-              
-              alt="Boy in sunshine"
+            <ImageComponent
+              image="./A7C00672.jpg"
+              altText="Boy in sunshine"
+              orientation="landscape"
             />
+
             <h2 className="pt-5 ">
               Focus has never been my strength — unless it’s set to auto.
             </h2>
-            <img
-              className="py-3 py-md-5 landscape"
-              src="./A7C00885.jpg"
-              
-              alt="A red bridge in malmö"
+            <ImageComponent
+              image="./A7C00885.jpg"
+              altText="A red bridge in malmö"
+              orientation="landscape"
             />
             <h3 className="pt-5 ">
               Sometimes I just get lucky. I point, I shoot, and the moment stick
               with me long enough to be caught.
             </h3>
-            <img
-              className="py-3 py-md-5 landscape"
-              src="./A7C00427.jpg"
-              
-              alt="Boy at rövearekulan"
+            <ImageComponent
+              image="./A7C00427.jpg"
+              altText="Boy at Rövearekulan"
+              orientation="landscape"
+            />
+            <ImageComponent
+              image="./A7C00410.jpg"
+              altText="Trees at Rövearekulan"
+              orientation="portrait"
             />
             <h3 className="pt-5 ">
               I don’t work on demand. I let the world surprise me — and
               sometimes, I get luckyish.
             </h3>
-            <img
-              className="py-3 py-md-5 landscape"
-              src="./A7C00375.jpg"
-              
-              alt="Balcony umbrellas"
+            <ImageComponent
+              image="./A7C00375.jpg"
+              altText="Balcony umbrellas"
+              orientation="landscape"
             />
             <h3 className="pt-5 ">
               If my brain was a car, it’d still have plastic wheels. Luckily the
               camera steers straighter.
             </h3>
-            <img
-              className="py-3 py-md-5 portrait"
-              src="./A7C00121.jpg"
-              
-              alt="Corgi - AMC Pacer toy car"
+            <ImageComponent
+              image="./A7C00121.jpg"
+              altText="Corgi - AMC Pacer toy car"
+              orientation="portrait"
             />
             <h3 className="pt-5">
               Tasked by{" "}
@@ -104,47 +105,42 @@ export default function Home() {
               </a>{" "}
               ’s fresh design.
             </h3>
-            <img
-              className="py-3 landscape"
-              src="./A7C00133.jpg"
-              alt="Foggy bridge"
+            <ImageComponent
+              image="./A7C00133.jpg"
+              altText="Kado in fridge"
+              orientation="landscape"
             />
             <div class="col-6 mb-5">
-              <img
-                className="py-3 landscape"
-                src="./A7C00248.jpg"
-
-                alt="Foggy bridge"
+              <ImageComponent
+                image="./A7C00248.jpg"
+                altText="Kado on bridge"
+                orientation="portrait"
               />
             </div>
             <div class="col-6 mb-5">
-              <img
-                className="py-3 landscape"
-                src="./A7C00260.jpg"
-                
-                alt="Foggy bridge"
+              <ImageComponent
+                image="./A7C00260.jpg"
+                altText="Kado on bridge"
+                orientation="portrait"
               />
             </div>
             <h1 className="pt-5">
               Fog makes the world softer. The camera makes it stay.
             </h1>
-            <img
-              className="py-3 py-md-5 landscape"
-              src="./A7C00017.jpg"
-              
-              alt="Foggy bridge"
+            <ImageComponent
+              image="./A7C00017.jpg"
+              altText="Foggy bridge"
+              orientation="landscape"
             />
-            <img
-              className="py-3 py-md-5 portrait"
-              src="./A7C00633.jpg"
-              
-              alt="FOggy road"
+            <ImageComponent
+              image="./A7C00633.jpg"
+              altText="Foggy road"
+              orientation="portrait"
             />
-            <img
-              className="py-3 py-md-5 portrait"
-              src="./A7C00790.jpg"
-              
-              alt="Foggy electric"
+            <ImageComponent
+              image="./A7C00790.jpg"
+              altText="Foggy electric"
+              orientation="portrait"
             />
           </div>
         </div>
