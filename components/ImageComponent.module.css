@@ -1,23 +1,62 @@
-.imageContainer {
+.imageContainerLandscape {
   position: relative;
+  max-width: 2400px;
+  margin: auto;
+}
+.imageContainerPortrait {
+  position: relative;
+  max-width: 1728px;
+  margin: auto;
 }
 .miniatureAbsoluteContainer {
   position: absolute;
   top: 0;
   bottom: 0;
 }
-.spacer {
-  height: calc(100% - 200px);
+.landscapeSpacer {
+  height: calc(100% - 160px);
 }
-.miniature {
+.portraitSpacer {
+  height: calc(100% - 267px);
+}
+
+.miniature:hover {
+  opacity: 0;
+}
+.landscape{
+  width: 100%;
+  max-width: 2400px;
+  height: auto;
+  margin: auto;
+}
+.portrait{
+   width: 100%;
+  max-width: 1728px;
+  height: auto;
+  margin: auto;
+}
+.miniatureLandscape{
+  width: 240px;
+  height: auto;
   margin: 0;
   position: sticky;
-  height: 200px;
+  bottom: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+
+}
+.miniaturePortrait{
+  width: 178px;
+  height: auto;
+  margin: 0;
+  position: sticky;
   bottom: 0;
   opacity: 1;
   transition: opacity 0.3s ease;
 }
-.miniature:hover {
+
+.miniatureLandscape:hover,
+.miniaturePortrait:hover {
   opacity: 0;
 }
 

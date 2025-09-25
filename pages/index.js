@@ -39,7 +39,7 @@ export default function Home() {
       <main className="d-flex justify-content-start align-items-start flex-column">
         <div className="flex-container mb-5 custom-max-width">
           <div className="row">
-            <div class="hero my-5">Snabb studio</div>
+            <div className="hero my-5">Snabb studio</div>
             <h1>
               — pointing a camera at stuff that looks less boring since 2023
             </h1>
@@ -110,14 +110,14 @@ export default function Home() {
               altText="Kado in fridge"
               orientation="landscape"
             />
-            <div class="col-6 mb-5">
+            <div className="col-6 mb-5">
               <ImageComponent
                 image="./A7C00248.jpg"
                 altText="Kado on bridge"
                 orientation="portrait"
               />
             </div>
-            <div class="col-6 mb-5">
+            <div className="col-6 mb-5">
               <ImageComponent
                 image="./A7C00260.jpg"
                 altText="Kado on bridge"
@@ -144,9 +144,9 @@ export default function Home() {
             />
           </div>
         </div>
-        <div class="container-fluid custom-max-width">
-          <div class="row justify-content-end py-5">
-            <div class="col-9">
+        <div className="container-fluid custom-max-width">
+          <div className="row justify-content-end py-5">
+            <div className="col-9">
               <h4 className="pt-5">
                 This site is like me — slow to update.{" "}
                 <a href="https://www.instagram.com/snabb.studio/">Instagram</a>{" "}
@@ -154,8 +154,8 @@ export default function Home() {
               </h4>
             </div>
           </div>
-          <div class="row justify-content-start py-5 mb-5">
-            <div class="col-7 mb-5">
+          <div className="row justify-content-start py-5 mb-5">
+            <div className="col-7 mb-5">
               <h4 className="pt-5 mb-5">
                 <a href="mailto:s.sjoblom@gmail.com">Send me a message.</a> I’ll
                 probably answer faster than a toy car in the fog.
@@ -164,7 +164,7 @@ export default function Home() {
           </div>
         </div>
         <div className="container-fluid text-center py-3">
-          <div class="row justify-content-center">
+          <div className="row justify-content-center">
             <p className="text-center s">
               © 2025 Snabb Studio. All photos are mine, not yours. You may look,
               scroll, and admire — but don’t copy, steal, or use them for your

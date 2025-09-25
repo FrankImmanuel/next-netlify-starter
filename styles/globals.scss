@@ -148,18 +148,6 @@ p{
 w-auto{
   width:auto;
 }
-img.landscape{
-  width: 100%;
-  max-width: 2400px;
-  height: auto;
-  margin: auto;
-}
-img.portrait{
-   width: 100%;
-  max-width: 1728px;
-  height: auto;
-  margin: auto;
-}
 .custom-max-width{
   margin: auto;
   max-width: 2400px;
@@ -170,28 +158,6 @@ img.portrait{
   line-height: 100%;
   font-weight: 900;
   text-transform: uppercase;
-}
-.image-container{
-  position: relative;
-  .miniature-absolute-container{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    .spacer{
-      height: calc(100% - 216px);
-    }
-      .miniature{
-        margin: 20px;
-        position: sticky;
-        height: 200px;
-        bottom: 0;
-        opacity: 1;
-        transition: opacity 0.3s ease;
-      &:hover{
-        opacity: 0;
-      }
-    }
-  }
 }
 
 .card{
