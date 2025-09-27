@@ -1,7 +1,5 @@
 import '@styles/globals.scss'
 import { Inter_Tight } from 'next/font/google'
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
 
 
 
