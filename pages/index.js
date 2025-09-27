@@ -9,15 +9,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Snabb Studio is not a typical photography service. I capture unplanned, everyday moments with humor, honesty, and a touch of fog. Follow along for artistic photography that notices what others miss."
+          content="Snabb Studio is not a typical photography service. I capture unplanned, everyday moments with humor, honesty, and often a touch of fog."
         />
         <meta
           property="og:title"
-          content="Snabb Studio | Artistic Photography of Unplanned Moments"
+          content="Snabb Studio | Photography of Unplanned Moments"
         />
         <meta
           property="og:description"
-          content="I don’t take assignments. I just point the camera at things that look less boring than me."
+          content="Snabb Studio is not a typical photography service. I capture unplanned, everyday moments with humor, honesty, and often a touch of fog."
         />
         <meta property="og:image" content="https://snabb.studio/A7C00885.jpg" />
         <meta property="og:url" content="https://snabb.studio" />
@@ -31,7 +31,7 @@ export default function Home() {
             "description": "I capture unplanned, everyday moments with humor, honesty, and a touch of fog.",
             "url": "https://snabb.studio",
             "sameAs": [
-              "https://www.instagram.com/yourhandle"
+              "https://www.instagram.com/snabb.studio"
             ]
           }
           `}</script>
@@ -39,109 +39,50 @@ export default function Home() {
       <main className="d-flex justify-content-start align-items-start flex-column">
         <div className="flex-container mb-5 custom-max-width">
           <div className="row">
-            <div className="hero my-5">Snabb studio</div>
-            <h1>
-              — pointing a camera at stuff that looks less boring since 2023
-            </h1>
-            <ImageComponent
-              image="./A7C00699.jpg"
-              altText="Boy walking up"
-              orientation="landscape"
-            />
-            <ImageComponent
-              image="./A7C00672.jpg"
-              altText="Boy in sunshine"
-              orientation="landscape"
-            />
-
-            <h2 className="pt-5 ">
-              Focus has never been my strength — unless it’s set to auto.
-            </h2>
-            <ImageComponent
-              image="./A7C00885.jpg"
-              altText="A red bridge in malmö"
-              orientation="landscape"
-            />
-            <h3 className="pt-5 ">
-              Sometimes I just get lucky. I point, I shoot, and the moment stick
-              with me long enough to be caught.
-            </h3>
-            <ImageComponent
-              image="./A7C00427.jpg"
-              altText="Boy at Rövearekulan"
-              orientation="landscape"
-            />
-            <ImageComponent
-              image="./A7C00410.jpg"
-              altText="Trees at Rövearekulan"
-              orientation="portrait"
-            />
-            <h3 className="pt-5 ">
-              I don’t work on demand. I let the world surprise me — and
-              sometimes, I get luckyish.
-            </h3>
-            <ImageComponent
-              image="./A7C00375.jpg"
-              altText="Balcony umbrellas"
-              orientation="landscape"
-            />
-            <h3 className="pt-5 ">
-              If my brain was a car, it’d still have plastic wheels. Luckily the
-              camera steers straighter.
-            </h3>
-            <ImageComponent
-              image="./A7C00121.jpg"
-              altText="Corgi - AMC Pacer toy car"
-              orientation="portrait"
-            />
-            <h3 className="pt-5">
-              Tasked by{" "}
-              <a href="https://kolossal.se/" target="_blank">
-                Kolossal
-              </a>{" "}
-              to point my camera at the new{" "}
-              <a href="https://www.kadodrinks.se/" target="_blank">
-                Kado Drinks
-              </a>{" "}
-              ’s fresh design.
-            </h3>
-            <ImageComponent
-              image="./A7C00133.jpg"
-              altText="Kado in fridge"
-              orientation="landscape"
-            />
-            <div className="col-6 mb-5">
-              <ImageComponent
-                image="./A7C00248.jpg"
-                altText="Kado on bridge"
-                orientation="portrait"
-              />
+            <div className="hero my-5">
+              Snabb studio
             </div>
-            <div className="col-6 mb-5">
-              <ImageComponent
-                image="./A7C00260.jpg"
-                altText="Kado on bridge"
-                orientation="portrait"
-              />
-            </div>
-            <h1 className="pt-5">
-              Fog makes the world softer. The camera makes it stay.
+            <h1 className="mb-5">
+              — pointing a camera at less boring stuff since 2023
             </h1>
-            <ImageComponent
-              image="./A7C00017.jpg"
-              altText="Foggy bridge"
-              orientation="landscape"
-            />
-            <ImageComponent
-              image="./A7C00633.jpg"
-              altText="Foggy road"
-              orientation="portrait"
-            />
-            <ImageComponent
-              image="./A7C00790.jpg"
-              altText="Foggy electric"
-              orientation="portrait"
-            />
+            <div class="masonry wrapper switcher">
+              <div class="flow">
+                <img src="./A7C00699.jpg" alt="" />
+                <img src="./A7C00672.jpg" alt="" />
+                <img src="./A7C00885.jpg" alt="" />
+                <img src="./A7C00427.jpg" alt="" />
+                <img src="./A7C00410.jpg" alt="" />
+                <img src="./A7C00023.jpg" alt="" />
+                <img src="./A7C00138.jpg" alt="" />
+                <img src="./A7C00267.jpg" alt="" />
+                <img src="./A7C00326.jpg" alt="" />
+                <img src="./A7C00641.jpg" alt="" />
+                <img src="./A7C01079.jpg" alt="" />
+              </div>
+              <div class="flow">
+                <img src="./A7C00375.jpg" alt="" />
+                <img src="./A7C00121.jpg" alt="" />
+                <img src="./A7C00133.jpg" alt="" />
+                <img src="./A7C00248.jpg" alt="" />
+                <img src="./A7C00195.jpg" alt="" />
+                <img src="./A7C00289.jpg" alt="" />
+                <img src="./A7C00621.jpg" alt="" />
+                <img src="./A7C00639.jpg" alt="" />
+                <img src="./A7C00651.jpg" alt="" />
+                <img src="./A7C00844.jpg" alt="" />
+              </div>
+              <div class="flow">
+                <img src="./A7C00260.jpg" alt="" />
+                <img src="./A7C00017.jpg" alt="" />
+                <img src="./A7C00633.jpg" alt="" />
+                <img src="./A7C00790.jpg" alt="" />
+                <img src="./A7C00248-2.jpg" alt="" />
+                <img src="./A7C00298.jpg" alt="" />
+                <img src="./A7C00627.jpg" alt="" />
+                <img src="./A7C00785.jpg" alt="" />
+                <img src="./A7C01333.jpg" alt="" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="container-fluid custom-max-width">
