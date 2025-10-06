@@ -47,6 +47,7 @@ export default function Home() {
             </h1>
             <div class="masonry wrapper switcher">
               <div class="flow">
+                <img src="./A7C00127-HDR.jpg" alt="" />
                 <img src="./A7C00699.jpg" alt="" />
                 <img src="./A7C00672.jpg" alt="" />
                 <img src="./A7C00885.jpg" alt="" />
@@ -61,6 +62,7 @@ export default function Home() {
               </div>
               <div class="flow">
                 <img src="./A7C00375.jpg" alt="" />
+                <img src="./A7C00015-HDR.jpg" alt="" />
                 <img src="./A7C00121.jpg" alt="" />
                 <img src="./A7C00133.jpg" alt="" />
                 <img src="./A7C00248.jpg" alt="" />
