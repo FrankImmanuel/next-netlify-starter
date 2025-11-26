@@ -61,6 +61,7 @@ export default function Home() {
                 <img src="./A7C01079.jpg" alt="" />
               </div>
               <div class="flow">
+                <img src="./A7C01198.jpg" alt="" />
                 <img src="./A7C00375.jpg" alt="" />
                 <img src="./A7C00015-HDR.jpg" alt="" />
                 <img src="./A7C00121.jpg" alt="" />
@@ -74,6 +75,7 @@ export default function Home() {
                 <img src="./A7C00844.jpg" alt="" />
               </div>
               <div class="flow">
+                 <img src="./A7C01280.jpg" alt="" />
                 <img src="./A7C00260.jpg" alt="" />
                 <img src="./A7C00017.jpg" alt="" />
                 <img src="./A7C00633.jpg" alt="" />
