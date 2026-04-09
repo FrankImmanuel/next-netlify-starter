@@ -73,6 +73,7 @@ body {
   background-color: #1E1E1E;
   height: 100%;
   width: 100%;
+  box-sizing: border-box;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -152,12 +153,12 @@ w-auto{
   max-width: 3000px;
 }
 .hero-subtitle{
-  max-width: 482px;
-  text-align: flex-end;
+  max-width: 325px;
+  text-align: right;
+  font-size: 22px;
+  margin-right: 3vw;
+  color: white;
   mix-blend-mode: difference;
-  color: #888A6F;
-  font-size: 32px;
-  margin-right: 6vw;
 }
 .card{
   box-shadow: $shadow;
@@ -425,6 +426,6 @@ w-auto{
 .flex-container {
   position: relative;
 }
-.w-90{
-  width: 90%;
+.w-80{
+  width: 80%;
 }
