@@ -141,13 +141,13 @@ export default function Home() {
 
       <div
       >
-        <div className="flex-container mb-5 custom-max-width">
+        <div className="flex-container">
           <div className="row">
-            <div className="hero fixed-center w-80 mb-5 pb-5">
+            <div className="hero fixed-center px-2 px-sm-5 pb-5">
               <img src="/logo.svg" className="img-fluid w-100 mb-5 pb-5" alt="" />
             </div>
-            <div className="fixed-center w-80 blend-difference mt-5 pt-5">
-              <h6 className="pt-5 mt-5 hero-subtitle">
+            <div className="fixed-center blend-difference pt-0 pt-sm-5">
+              <h6 className="pt-3 pt-sm-5 mt-5 hero-subtitle pe-1 pe-sm-5">
                 with the intention to make photos that feel like something
               </h6>
             </div>

@@ -210,7 +210,7 @@ w-auto{
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 576px) {
   html,
   body {
     font-size: 14px;
@@ -237,7 +237,11 @@ w-auto{
     padding-left: 1rem;
     padding-right: 1rem;
   }
-
+  .hero-subtitle{
+     max-width: 225px;
+    font-size: 16px;
+    margin-right: 3vw;
+  }
 }
 
 .masonry {
