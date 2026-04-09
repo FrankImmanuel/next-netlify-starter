@@ -73,8 +73,8 @@ export default function Home() {
     <>
       <ReactLenis root />
       <Head>
-        <title>Snabb Studio | Simple Photography of Unplanned Moments</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Snabb Studio – with the intention to make photos that feel like something</title>
+        <link rel="icon" href="/icon.svg" />
         <meta
           name="description"
           content="Snabb Studio is not a typical photography service. I capture unplanned, everyday moments with humor, honesty, and often a touch of fog."
