@@ -103,7 +103,7 @@ h6{
 }
 p{
   font-size: $body--18px---regular;
-  color: $neutral--70;
+  color: $neutral--40;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 1.6875rem */
@@ -139,6 +139,9 @@ p{
     font-weight: 700;
   }
 }
+a{
+  color: #EBFA32;
+}
 .highlight{
   color: $neutral--40;
 }
@@ -157,7 +160,9 @@ w-auto{
   text-align: right;
   font-size: 22px;
   margin-right: 3vw;
-  color: white;
+  letter-spacing: 0;
+  color: #888A6F;
+  font-weight: 600;
   mix-blend-mode: difference;
 }
 .card{
@@ -428,4 +433,7 @@ w-auto{
 }
 .w-80{
   width: 80%;
+}
+.blend-difference{
+  mix-blend-mode: difference;
 }
