@@ -1,0 +1,38 @@
+snabb.studio — iPhone-genväg
+
+Installation
+Öppna https://snabb.studio/admin i Safari på din iPhone. Under iPhone: skapa en uppladdningsnyckel och installera genvägen. Behåll adressen https://snabb.studio och klistra in nyckeln. Välj sedan en bild i Bilder > Dela > snabb.studio.
+
+Förutsättningar
+- Sajten kör på HTTPS, med Netlify-lagring och din privata inloggning aktiverade.
+- Logga in på https://snabb.studio/admin i Safari.
+- Skapa en uppladdningsnyckel under admin > iPhone. Nyckeln ger bara åtkomst till seriens namn och att skapa bildutkast. Den kan inte publicera eller redigera ditt arkiv.
+- Dela aldrig själva genvägen med nyckeln kvar i den.
+
+Bygg i appen Genvägar
+1. Skapa en genväg med namnet snabb.studio.
+2. Aktivera Visa i delningsbladet. Acceptera Bilder. Om ingen inmatning finns, använd Välj bilder. Arbeta med en bild per körning.
+3. Ändra storlek på bilden så den längsta sidan är högst 2000 pixlar. För stående bild sätter du höjden till 2000; för liggande sätter du bredden. Behåll proportionerna.
+4. Konvertera bild till JPEG, kvalitet cirka 80 %, utan metadata. Webbkopian ska vara under 3 MB. Originalet ändras inte.
+5. Base64-koda JPEG-bilden. Ställ in radbrytningar på Inga. Spara resultatet som variabeln Bilddata.
+6. Lägg till Text med https://snabb.studio och spara den som Webbplats.
+7. Lägg till Text med din personliga nyckel (snabb_...) och spara den som Nyckel.
+8. Hämta innehåll från URL: [Webbplats]/api/shortcut, metod GET. Lägg till headern Authorization med värdet Bearer [Nyckel].
+9. Hämta ordboksvärdet series från svaret. Det är en lista med objekt som innehåller id och title. Bygg en lista av deras title och lägg till alternativet Ingen serie. Använd Välj från lista. För vald titel: hitta samma objekt och spara dess id; för Ingen serie: använd tom text.
+10. Hämta innehåll från URL: [Webbplats]/api/shortcut, metod POST. Samma Authorization-header. Välj JSON som begärandetext med dessa fält:
+    image: variabeln Bilddata
+    seriesId: valt id, eller tom text
+    alt: tom text (kan fyllas i i admin)
+11. Kontrollera svaret. Om det innehåller error: visa feltexten och stoppa. Om svaret innehåller previewPath, öppna URL: [Webbplats][previewPath].
+12. Safari visar bilden i admin. Kontrollera bilden och serien. Tryck Publicera bild.
+
+Resultat
+Bilder > Dela > snabb.studio > välj serie > förhandsvisning > Publicera bild.
+
+Första gången kan iPhone fråga om nätverksåtkomst för genvägen. Den här anvisningen måste provköras på den riktiga telefonen efter att HTTPS-miljön är kopplad. En signerad genväg finns på /snabb-studio-live.shortcut. Den använder 1600 pixlars bredd med bibehållna proportioner; servern begränsar sedan båda sidorna till 1600 pixlar.
+
+Om något avbryts
+Uppladdningen skapar alltid ett utkast. Du hittar det under Bilder i admin. Att upprepa samma uppladdning via genvägen återanvänder utkastet i stället för att skapa dubbla bilder. Publicerade bilder får sitt ursprungliga uppladdningsdatum kvar.
+
+Om telefonen eller genvägen byts
+Återkalla nyckeln under admin > iPhone och skapa en ny. Din vanliga inloggning påverkas inte.

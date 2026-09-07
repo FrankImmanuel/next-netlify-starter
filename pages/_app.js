@@ -1,20 +1,16 @@
-import '@styles/globals.scss'
-import { Geist } from 'next/font/google'
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import 'lenis/dist/lenis.css';
+import '../styles/gallery.css';
+import { ScrollMotion } from '../components/ScrollMotion';
 
-
-
-// If loading a variable font, you don't need to specify the font weight
-const geist = Geist({
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-function Application({ Component, pageProps }) {
-  return (
-    <main className={geist.className}>
-      <Component {...pageProps} />
-    </main>
-  )
+export default function Application({ Component, pageProps }) {
+  const router = useRouter();
+  useEffect(() => {
+    if (router.pathname !== '/admin' && /(?:invite_token|recovery_token|confirmation_token|access_token)=/.test(window.location.hash)) {
+      router.replace('/admin' + window.location.hash);
+    }
+  }, [router.pathname]);
+  if (router.pathname === '/admin') return <Component {...pageProps} />;
+  return <ScrollMotion><Component {...pageProps} /></ScrollMotion>;
 }
-
-export default Application
