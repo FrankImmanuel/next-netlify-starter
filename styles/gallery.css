@@ -163,8 +163,8 @@ svg { flex-shrink: 0; }
 .journal-prototype .text-button,
 .journal-prototype .viewer-bottom a,
 .journal-prototype .footer a{
- background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 16' preserveAspectRatio='none'%3E%3Cpath d='M20 3 Q120 1 230 4 Q145 6 3 10 Q108 14 230 10' fill='none' stroke='%23422f4e' stroke-opacity='.9' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
- background-repeat:no-repeat;background-size:100% 11px;background-position:center bottom;padding-bottom:12px;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 10' preserveAspectRatio='none'%3E%3Cpath d='M3 6 Q69 2 235 3 M20 2 Q120 1 230 5 Q144 5 8 8' fill='none' stroke='%23422f4e' stroke-opacity='.9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+ background-repeat:no-repeat;background-size:100% 7px;background-position:center bottom;padding-bottom:12px;
 }
 @media(max-width:700px){.journal-prototype .note-arrow{top:9px;height:44px;width:34px}.journal-prototype .has-note-arrow{padding-top:63px}}
 /* Reserve room for both opposing 110px parallax offsets and tilted captions. */
