@@ -21,15 +21,35 @@ This project is a very minimal starter that includes 2 sample components, a glob
 
 ## Getting Started
 
-First, run the development server:
+Use Node.js 22.12 or newer (`nvm use` selects the version in `.nvmrc`). Install dependencies with `npm install`, then start the development server with local CMS storage enabled:
 
 ```bash
-npm run dev
-# or
-yarn dev
+SNABB_LOCAL_CMS=1 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Open [http://localhost:3000/admin](http://localhost:3000/admin) to upload photographs, manage series and add notes. Local CMS mode allows admin access on localhost without Netlify sign-in.
+
+For port 3100 instead:
+
+```bash
+SNABB_LOCAL_CMS=1 npm run dev -- --hostname 127.0.0.1 --port 3100
+```
+
+To make local mode persistent, add this line to `.env.local` (keep any existing settings):
+
+```dotenv
+SNABB_LOCAL_CMS=1
+```
+
+Then `npm run dev` is enough. Restart the development server after changing environment variables. The `NETLIFY` environment variable must be unset for local CMS mode to work.
+
+Local photographs and CMS data are stored in `.data/`, which is excluded from Git. Each local clone has its own data; production photographs are not downloaded automatically. A fresh clone starts with an empty gallery, which you can populate through `/admin`. Production uses Netlify Blobs separately.
+
+If you see **“Lagringen är inte konfigurerad.”**, stop the server and restart with `SNABB_LOCAL_CMS=1` as shown above. Setting only `SNABB_STORAGE=netlify` does not configure local access to Netlify Blobs.
+
+See [CMS.md](CMS.md) for more details about the CMS and production configuration.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
@@ -43,7 +63,7 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 1. Clone this repo: `git clone https://github.com/netlify-templates/next-netlify-starter.git`
 2. Navigate to the directory and run `npm install`
-3. Run `npm run dev`
+3. Run `SNABB_LOCAL_CMS=1 npm run dev`
 4. Make your changes
 5. Connect to [Netlify](https://url.netlify.com/Bk4UicocL) manually (the `netlify.toml` file is the one you'll need to make sure stays intact to make sure the export is done and pointed to the right stuff)
 
