@@ -1399,3 +1399,18 @@ svg {
 .loading-study-grid .photo-surface > img { height: 100%; object-fit: contain; }
 .loading-study-controls { display: flex; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
 @media(max-width:700px) { .loading-study-grid {gap:20px;} .loading-study-grid h2{font-size:16px;} }
+
+/* Immediate feedback under the finger; release gently without a sticky hover. */
+@media (any-pointer: coarse) {
+  .header nav a {
+    border-radius: 4px;
+    transition: background-color 120ms var(--ease), box-shadow 120ms var(--ease), color 120ms var(--ease);
+  }
+  .header nav a:active {
+    color: var(--ink);
+    background-color: rgb(41 43 40 / 10%);
+    box-shadow: 0 0 0 5px rgb(41 43 40 / 10%);
+    transition-duration: 0ms;
+  }
+  .header .wordmark:active { opacity: 0.6; }
+}

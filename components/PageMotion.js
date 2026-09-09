@@ -36,11 +36,12 @@ export function usePageMotion() {
     const main = root.current;
     if (!main?.animate || keyboardNavigation) return;
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const ease = getComputedStyle(document.documentElement).getPropertyValue('--ease').trim();
+    const tokens = getComputedStyle(document.documentElement);
+    const ease = tokens.getPropertyValue('--ease').trim();
     const transition = getActivePageTransition();
     let disposed = false;
-    const duration = reduce ? 200 : 1200;
-    const delay = transition && !reduce ? 450 : 0;
+    const duration = reduce ? 200 : parseFloat(tokens.getPropertyValue('--page-enter-duration'));
+    const delay = transition && !reduce ? parseFloat(tokens.getPropertyValue('--page-enter-delay')) : 0;
     const frames = (distance, fade = false) => Array.from({ length: 101 }, (_, i) => {
       const progress = i === 100 ? 1 : 1 - 2 ** (-i / 10);
       return { offset: i / 100,
@@ -62,7 +63,7 @@ export function usePageMotion() {
     // moves, so Safari never hands off between two different transforms.
     const shell = main.parentElement;
     [shell.querySelector(':scope > header'), main, shell.querySelector(':scope > footer')]
-      .filter(Boolean).forEach(element => enter(element, !transition && !reduce && element === main ? 96 : 0, true));
+      .filter(Boolean).forEach(element => enter(element, !transition && !reduce && element === main ? parseFloat(tokens.getPropertyValue('--page-enter-distance')) : 0, true));
     if (transition && !reduce) {
       const prepared = [...running.current];
       transition.ready.then(() => {
