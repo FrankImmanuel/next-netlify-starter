@@ -1,0 +1,134 @@
+[
+  {
+    "width": 390,
+    "run": 0,
+    "cache": "cold",
+    "lcp": 156,
+    "cls": 0,
+    "ttfb": 9,
+    "imageBytes": 123022,
+    "imageRequests": 5,
+    "dataBytes": 4264
+  },
+  {
+    "width": 390,
+    "run": 0,
+    "cache": "warm",
+    "lcp": 88,
+    "cls": 0,
+    "ttfb": 5.700000017881393,
+    "imageBytes": 0,
+    "imageRequests": 0,
+    "dataBytes": 4264
+  },
+  {
+    "width": 390,
+    "run": 1,
+    "cache": "cold",
+    "lcp": 160,
+    "cls": 0,
+    "ttfb": 5.300000011920929,
+    "imageBytes": 123022,
+    "imageRequests": 5,
+    "dataBytes": 4264
+  },
+  {
+    "width": 390,
+    "run": 1,
+    "cache": "warm",
+    "lcp": 84,
+    "cls": 0,
+    "ttfb": 4.899999976158142,
+    "imageBytes": 0,
+    "imageRequests": 0,
+    "dataBytes": 4264
+  },
+  {
+    "width": 390,
+    "run": 2,
+    "cache": "cold",
+    "lcp": 156,
+    "cls": 0,
+    "ttfb": 4.5,
+    "imageBytes": 123022,
+    "imageRequests": 5,
+    "dataBytes": 4264
+  },
+  {
+    "width": 390,
+    "run": 2,
+    "cache": "warm",
+    "lcp": 84,
+    "cls": 0,
+    "ttfb": 4.600000023841858,
+    "imageBytes": 0,
+    "imageRequests": 0,
+    "dataBytes": 4264
+  },
+  {
+    "width": 1440,
+    "run": 0,
+    "cache": "cold",
+    "lcp": 188,
+    "cls": 0,
+    "ttfb": 6.200000017881393,
+    "imageBytes": 230438,
+    "imageRequests": 5,
+    "dataBytes": 4264
+  },
+  {
+    "width": 1440,
+    "run": 0,
+    "cache": "warm",
+    "lcp": 96,
+    "cls": 0,
+    "ttfb": 4.800000011920929,
+    "imageBytes": 0,
+    "imageRequests": 0,
+    "dataBytes": 4264
+  },
+  {
+    "width": 1440,
+    "run": 1,
+    "cache": "cold",
+    "lcp": 176,
+    "cls": 0,
+    "ttfb": 4.4000000059604645,
+    "imageBytes": 230438,
+    "imageRequests": 5,
+    "dataBytes": 4264
+  },
+  {
+    "width": 1440,
+    "run": 1,
+    "cache": "warm",
+    "lcp": 100,
+    "cls": 0,
+    "ttfb": 4.5,
+    "imageBytes": 0,
+    "imageRequests": 0,
+    "dataBytes": 4264
+  },
+  {
+    "width": 1440,
+    "run": 2,
+    "cache": "cold",
+    "lcp": 176,
+    "cls": 0,
+    "ttfb": 3.7999999821186066,
+    "imageBytes": 230438,
+    "imageRequests": 5,
+    "dataBytes": 4264
+  },
+  {
+    "width": 1440,
+    "run": 2,
+    "cache": "warm",
+    "lcp": 100,
+    "cls": 0,
+    "ttfb": 6.5999999940395355,
+    "imageBytes": 0,
+    "imageRequests": 0,
+    "dataBytes": 4264
+  }
+]

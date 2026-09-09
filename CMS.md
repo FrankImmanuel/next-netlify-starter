@@ -28,7 +28,7 @@ Account inspection on 2026-09-06 confirmed the existing project `melodious-beign
 
 Images are draft or published. An upload is always a draft until explicitly published. The home feed is sorted by immutable upload time, latest first. Re-publication does not move an old image to the top. Series are draft or published independently, with an ordered list of image IDs and optional cover. A photograph can belong to several series. Public series contain only published images and never leak draft series links. A series with no public images is omitted from the index and returns 404.
 
-Unpublishing changes visibility immediately. Uploaded media is served without CDN caching so earlier public URLs are rechecked. A visitor who already downloaded an image still has their copy. This deliberately simple approach increases function requests; image traffic and existing Netlify plan must be measured before estimating cost or introducing a cache.
+Unpublishing removes a photograph from the public catalog and series immediately. In the updated implementation, successful public image responses may be cached for at most five minutes from the start of the publication check, including time spent reading the blob. Cache-Control, CDN-Cache-Control and Netlify-CDN-Cache-Control use the same bounded max-age and must-revalidate, without durable or stale-while-revalidate. Authenticated draft responses and errors remain no-store. Copies already downloaded cannot be recalled. See docs/adr/0001-bounded-cache-after-unpublication.md and docs/verification/seo-images.md. The updated cache policy is locally verified; Netlify cache expiry and Age handling must be verified on deployment before considering the five-minute bound production-verified.
 
 ## Storage and edit conflicts
 
@@ -69,3 +69,13 @@ Shortcut v3: the iPhone screenshot pinpointed a blank If condition. Both error g
 Owner explicitly requested replacement of the live site. Production uses store snabb-cms-production, owner s.sjoblom@gmail.com, and https://snabb.studio for both the site origin and Identity. No review photos or device tokens are imported. The production Shortcut at /snabb-studio-live.shortcut defaults to https://snabb.studio and requires a new production upload key. About uses the latest published production photo instead of a static fixture. Public search indexing is enabled only for production builds. Previous production deploy for rollback: 69d7c32aceb40500089d9806.
 
 Production deploy 6a9d3cc8dd659025bef7a198 is live. Verified home HTTP 200 with expected gallery and no noindex tag; session HTTP 200 with production Identity URL; unauthenticated admin HTTP 401; empty public catalog HTTP 200; signed production Shortcut HTTP 200 with exact file-byte match. Deployed via CLI from the local working tree; GitHub has not been updated.
+
+## SEO and image improvements — implementation, 2026-09-09
+
+Public pages expose route-specific metadata, canonical URLs, English document language and published-only image sitemaps. `/robots.txt` allows public pages and media, while blocking admin APIs; previews remain noindex with a disallow-all robots file. `/index-old` redirects permanently to `/`; `/style` is retired with 404. Archive pages use `/?page=2` etc., with a real next-page link enhanced to append photographs. Only one archive page of photo data is sent initially.
+
+New uploads persist their exact thumbnail width. For legacy uploads, public pages read and memoize immutable thumbnail dimensions only after filtering publication status. To eliminate cold-worker metadata reads for existing uploads, run `node scripts/backfill-image-dimensions.mjs` in the explicitly configured CMS storage environment; it is a dry run unless `--write` is passed. It does not change image bytes or publication status, and a catalog revision conflict aborts the write. Never point local test configuration at production.
+
+The owner selected loading mark B (small underline). The paper/mark is behind the image, never an overlay that gates visibility. No image fade, animation delay, font dependency or extra placeholder request is used. `/loading-study` is available in development only.
+
+Public images still require truthful editorial descriptions. Admin displays the count of published images missing descriptions. No existing production text or catalog record has been changed by this implementation.

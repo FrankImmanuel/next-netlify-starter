@@ -198,3 +198,5 @@ export default function Style() {
     </div>
   )
 }
+
+export function getServerSideProps(){return {notFound:true};}
