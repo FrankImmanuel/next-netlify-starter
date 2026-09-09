@@ -1,14 +1,16 @@
 import { ArrowUp, ArrowUpRight, ArrowLeft, ArrowRight, X } from 'phosphor-react';
 import { useScrollMotion, useGalleryParallax } from './ScrollMotion';
 import Seo from './Seo';
+import { usePageMotion } from './PageMotion';
 import Photo from './Photo';
 import {gallerySizes} from '../lib/images.mjs';
 export {default as Photo} from './Photo';
-import Link from 'next/link';
+import Link from './TransitionLink';
 import { useEffect, useRef, useState } from 'react';
 
 export function Shell({children,active='photographs',...seo}) {
- return <div className="journal-prototype journal-dots"><Seo {...seo}/><a className="skip" href="#content">Skip to photographs</a><header className="header"><Link className="wordmark" href="/">snabb.studio</Link><nav aria-label="Main navigation">{[['photographs','/','Photographs'],['series','/series','Series'],['about','/about','About']].map(([id,url,label])=><Link key={id} href={url} aria-current={active===id?'page':undefined}>{label}</Link>)}</nav></header><main id="content">{children}</main><footer className="footer"><span>© {new Date().getFullYear()} snabb.studio</span><span>Photographs by Samuel Sjöblom</span><a href="#content">Back to top <ArrowUp size={16} aria-hidden="true"/></a></footer></div>;
+ const pageMotion = usePageMotion();
+ return <div className="journal-prototype journal-dots"><Seo {...seo}/><a className="skip" href="#content">Skip to photographs</a><header className="header"><Link className="wordmark" href="/">snabb.studio</Link><nav aria-label="Main navigation">{[['photographs','/','Photographs'],['series','/series','Series'],['about','/about','About']].map(([id,url,label])=><Link key={id} href={url} aria-current={active===id?'page':undefined}>{label}</Link>)}</nav></header><main id="content" ref={pageMotion}>{children}</main><footer className="footer"><span>© {new Date().getFullYear()} snabb.studio</span><span>Photographs by Samuel Sjöblom</span><a href="#content">Back to top <ArrowUp size={16} aria-hidden="true"/></a></footer></div>;
 }
 function PhotoNote({photo,full=false}) {
  if (!photo.noteTitle && !(full && photo.noteBody)) return null;

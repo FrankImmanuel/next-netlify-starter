@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '../../components/TransitionLink';
 import { ArrowUpRight } from 'phosphor-react';
 import {coverSizes} from '../../lib/images.mjs';
 import { Shell, Photo } from '../../components/GallerySite';

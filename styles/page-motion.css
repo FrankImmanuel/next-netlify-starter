@@ -1,0 +1,136 @@
+/* A page-sized paper reveal: both pages coexist as browser snapshots.
+   1000ms is deliberate for the full-screen portfolio transition, not a UI delay. */
+::view-transition { pointer-events: none; background: #000; }
+::view-transition-group(root) { animation-duration: 1000ms; }
+::view-transition-image-pair(root) { isolation: isolate; background: #000; }
+::view-transition-old(root),
+::view-transition-new(root) { mix-blend-mode: normal; height: 100%; }
+::view-transition-old(root) {
+  transform-origin: center center;
+  animation: paper-leave 1000ms linear both;
+}
+::view-transition-new(root) {
+  animation: paper-reveal 1000ms linear both, content-settle 1200ms linear 450ms both;
+}
+/* GSAP power2.inOut is cubic in the first half and cubic out in the second.
+   Per-segment Beziers reproduce that curve rather than approximating it with
+   one ease-in-out Bezier. */
+@keyframes paper-leave {
+  0% { transform: translateY(0) scale(1); opacity: 1; animation-timing-function: cubic-bezier(.3333333333, 0, .6666666667, 0); }
+  50% { transform: translateY(-3vh) scale(0.92); opacity: 0.75; animation-timing-function: cubic-bezier(.3333333333, 1, .6666666667, 1); }
+  100% { transform: translateY(-6vh) scale(0.84); opacity: 0.5; }
+}
+@keyframes paper-reveal {
+  0% { clip-path: inset(100% 0 0 0); animation-timing-function: cubic-bezier(.3333333333, 0, .6666666667, 0); }
+  50% { clip-path: inset(50% 0 0 0); animation-timing-function: cubic-bezier(.3333333333, 1, .6666666667, 1); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+/* Keep the incoming snapshot alive until it lands, then reveal identical DOM. */
+@keyframes content-settle {
+  0% { transform: translateY(96.000000px); }
+  1% { transform: translateY(89.571167px); }
+  2% { transform: translateY(83.572854px); }
+  3% { transform: translateY(77.976230px); }
+  4% { transform: translateY(72.754395px); }
+  5% { transform: translateY(67.882251px); }
+  6% { transform: translateY(63.336380px); }
+  7% { transform: translateY(59.094932px); }
+  8% { transform: translateY(55.137521px); }
+  9% { transform: translateY(51.445126px); }
+  10% { transform: translateY(48.000000px); }
+  11% { transform: translateY(44.785584px); }
+  12% { transform: translateY(41.786427px); }
+  13% { transform: translateY(38.988115px); }
+  14% { transform: translateY(36.377198px); }
+  15% { transform: translateY(33.941125px); }
+  16% { transform: translateY(31.668190px); }
+  17% { transform: translateY(29.547466px); }
+  18% { transform: translateY(27.568761px); }
+  19% { transform: translateY(25.722563px); }
+  20% { transform: translateY(24.000000px); }
+  21% { transform: translateY(22.392792px); }
+  22% { transform: translateY(20.893214px); }
+  23% { transform: translateY(19.494058px); }
+  24% { transform: translateY(18.188599px); }
+  25% { transform: translateY(16.970563px); }
+  26% { transform: translateY(15.834095px); }
+  27% { transform: translateY(14.773733px); }
+  28% { transform: translateY(13.784380px); }
+  29% { transform: translateY(12.861282px); }
+  30% { transform: translateY(12.000000px); }
+  31% { transform: translateY(11.196396px); }
+  32% { transform: translateY(10.446607px); }
+  33% { transform: translateY(9.747029px); }
+  34% { transform: translateY(9.094299px); }
+  35% { transform: translateY(8.485281px); }
+  36% { transform: translateY(7.917047px); }
+  37% { transform: translateY(7.386866px); }
+  38% { transform: translateY(6.892190px); }
+  39% { transform: translateY(6.430641px); }
+  40% { transform: translateY(6.000000px); }
+  41% { transform: translateY(5.598198px); }
+  42% { transform: translateY(5.223303px); }
+  43% { transform: translateY(4.873514px); }
+  44% { transform: translateY(4.547150px); }
+  45% { transform: translateY(4.242641px); }
+  46% { transform: translateY(3.958524px); }
+  47% { transform: translateY(3.693433px); }
+  48% { transform: translateY(3.446095px); }
+  49% { transform: translateY(3.215320px); }
+  50% { transform: translateY(3.000000px); }
+  51% { transform: translateY(2.799099px); }
+  52% { transform: translateY(2.611652px); }
+  53% { transform: translateY(2.436757px); }
+  54% { transform: translateY(2.273575px); }
+  55% { transform: translateY(2.121320px); }
+  56% { transform: translateY(1.979262px); }
+  57% { transform: translateY(1.846717px); }
+  58% { transform: translateY(1.723048px); }
+  59% { transform: translateY(1.607660px); }
+  60% { transform: translateY(1.500000px); }
+  61% { transform: translateY(1.399549px); }
+  62% { transform: translateY(1.305826px); }
+  63% { transform: translateY(1.218379px); }
+  64% { transform: translateY(1.136787px); }
+  65% { transform: translateY(1.060660px); }
+  66% { transform: translateY(0.989631px); }
+  67% { transform: translateY(0.923358px); }
+  68% { transform: translateY(0.861524px); }
+  69% { transform: translateY(0.803830px); }
+  70% { transform: translateY(0.750000px); }
+  71% { transform: translateY(0.699775px); }
+  72% { transform: translateY(0.652913px); }
+  73% { transform: translateY(0.609189px); }
+  74% { transform: translateY(0.568394px); }
+  75% { transform: translateY(0.530330px); }
+  76% { transform: translateY(0.494815px); }
+  77% { transform: translateY(0.461679px); }
+  78% { transform: translateY(0.430762px); }
+  79% { transform: translateY(0.401915px); }
+  80% { transform: translateY(0.375000px); }
+  81% { transform: translateY(0.349887px); }
+  82% { transform: translateY(0.326456px); }
+  83% { transform: translateY(0.304595px); }
+  84% { transform: translateY(0.284197px); }
+  85% { transform: translateY(0.265165px); }
+  86% { transform: translateY(0.247408px); }
+  87% { transform: translateY(0.230840px); }
+  88% { transform: translateY(0.215381px); }
+  89% { transform: translateY(0.200958px); }
+  90% { transform: translateY(0.187500px); }
+  91% { transform: translateY(0.174944px); }
+  92% { transform: translateY(0.163228px); }
+  93% { transform: translateY(0.152297px); }
+  94% { transform: translateY(0.142098px); }
+  95% { transform: translateY(0.132583px); }
+  96% { transform: translateY(0.123704px); }
+  97% { transform: translateY(0.115420px); }
+  98% { transform: translateY(0.107690px); }
+  99% { transform: translateY(0.100479px); }
+  100% { transform: translateY(0.000000px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(root),
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
+}

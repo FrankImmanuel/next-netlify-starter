@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import 'lenis/dist/lenis.css';
 import '../styles/gallery.css';
+import '../styles/page-motion.css';
 import { ScrollMotion } from '../components/ScrollMotion';
 
 export default function Application({ Component, pageProps }) {
