@@ -1,6 +1,8 @@
-# Draft photograph descriptions
+# Approved photograph descriptions
 
-Status: editorial drafts for owner review. These descriptions were written from the public photographs, not filenames or inferred locations. They have not been saved to the CMS. The numbers follow the public archive snapshot of 2026-09-09; use the stable ID when applying them.
+Status: approved by the owner and saved to the production CMS on 2026-09-09. All 21 descriptions were verified on the public archive (12 photographs on the first page and 9 on the second); the CMS reports zero published photographs missing descriptions. These descriptions were written from the public photographs, not filenames or inferred locations. The numbers follow the public archive snapshot of 2026-09-09; use the stable ID when applying them.
+
+Location follow-up: the owner approved adding useful place names when supported by metadata. The current upload pipeline strips GPS/EXIF from web copies and stores no location fields. No place names were added; original-file metadata was not available through the CMS. Originals would need to be checked before adding verified place names.
 
 Keep descriptions short and literal. Do not insert Nordic/Swedish location claims, names or artistic interpretations that the photograph does not establish.
 
