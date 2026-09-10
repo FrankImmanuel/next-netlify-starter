@@ -20,9 +20,9 @@
    Per-segment Beziers reproduce that curve rather than approximating it with
    one ease-in-out Bezier. */
 @keyframes paper-leave {
-  0% { transform: translateY(0) scale(1); opacity: 1; animation-timing-function: cubic-bezier(.3333333333, 0, .6666666667, 0); }
-  50% { transform: translateY(-3vh) scale(0.92); opacity: 0.75; animation-timing-function: cubic-bezier(.3333333333, 1, .6666666667, 1); }
-  100% { transform: translateY(-6vh) scale(0.84); opacity: 0.5; }
+  0% { transform: translateY(0) scale(1); filter: blur(0); opacity: 1; animation-timing-function: cubic-bezier(.3333333333, 0, .6666666667, 0); }
+  50% { transform: translateY(-3vh) scale(0.92); filter: blur(1px); opacity: 0.75; animation-timing-function: cubic-bezier(.3333333333, 1, .6666666667, 1); }
+  100% { transform: translateY(-6vh) scale(0.84); filter: blur(3px); opacity: 0.5; }
 }
 @keyframes paper-reveal {
   0% { clip-path: inset(100% 0 0 0); animation-timing-function: cubic-bezier(.3333333333, 0, .6666666667, 0); }
