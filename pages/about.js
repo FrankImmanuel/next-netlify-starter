@@ -7,7 +7,6 @@ export async function getServerSideProps({ res }) {
   const { readState } = await import("../lib/server/storage.mjs");
   const { publicCatalog } = await import("../lib/server/model.mjs");
   const {privateResponse}=await import("../lib/server/cache.mjs");
-  const {withImageDimensions}=await import("../lib/server/image-dimensions.mjs");
   privateResponse(res);
-  return { props: { photo: (await withImageDimensions(publicCatalog((await readState()).state).photos.slice(0,1)))[0] || null } };
+  return { props: { photo: publicCatalog((await readState()).state).photos[0] || null } };
 }

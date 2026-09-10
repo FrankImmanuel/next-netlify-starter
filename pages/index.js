@@ -37,7 +37,6 @@ export async function getServerSideProps({query,res}) {
   const {privateResponse}=await import('../lib/server/cache.mjs');
   const {readState}=await import('../lib/server/storage.mjs');
   const {publicCatalog}=await import('../lib/server/model.mjs');
-  const {withImageDimensions}=await import('../lib/server/image-dimensions.mjs');
   privateResponse(res);
   const pageNumber=archivePage(query.page);
   if (!pageNumber) return {notFound:true};
@@ -45,5 +44,5 @@ export async function getServerSideProps({query,res}) {
   const all=publicCatalog((await readState()).state).photos;
   const start=(pageNumber-1)*PAGE_SIZE;
   if (start>=all.length && pageNumber!==1) return {notFound:true};
-  return {props:{photos:await withImageDimensions(all.slice(start,start+PAGE_SIZE)),pageNumber,hasMore:start+PAGE_SIZE<all.length}};
+  return {props:{photos:all.slice(start,start+PAGE_SIZE),pageNumber,hasMore:start+PAGE_SIZE<all.length}};
 }

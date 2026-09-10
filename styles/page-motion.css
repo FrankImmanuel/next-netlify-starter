@@ -1,9 +1,9 @@
-:root { --page-sweep-duration: 1000ms; --page-enter-duration: 1200ms; --page-enter-delay: 450ms; --page-enter-distance: 96px; }
+:root { --page-sweep-duration: 500ms; --page-enter-duration: 700ms; --page-enter-delay: 450ms; --page-enter-distance: 96px; }
 @media (max-width: 700px) {
   :root { --page-sweep-duration: 400ms; --page-enter-duration: 500ms; --page-enter-delay: 120ms; --page-enter-distance: 32px; }
 }
 /* A page-sized paper reveal: both pages coexist as browser snapshots.
-   1000ms is deliberate for the full-screen portfolio transition, not a UI delay. */
+   Desktop reveal takes 500ms; content settles within 1150ms including delay. */
 ::view-transition { pointer-events: none; background: #000; }
 ::view-transition-group(root) { animation-duration: var(--page-sweep-duration); }
 ::view-transition-image-pair(root) { isolation: isolate; background: #000; }
@@ -20,9 +20,9 @@
    Per-segment Beziers reproduce that curve rather than approximating it with
    one ease-in-out Bezier. */
 @keyframes paper-leave {
-  0% { transform: translateY(0) scale(1); filter: blur(0); opacity: 1; animation-timing-function: cubic-bezier(.3333333333, 0, .6666666667, 0); }
-  50% { transform: translateY(-3vh) scale(0.92); filter: blur(1px); opacity: 0.75; animation-timing-function: cubic-bezier(.3333333333, 1, .6666666667, 1); }
-  100% { transform: translateY(-6vh) scale(0.84); filter: blur(3px); opacity: 0.5; }
+  0% { transform: translateY(0) scale(1); opacity: 1; animation-timing-function: cubic-bezier(.3333333333, 0, .6666666667, 0); }
+  50% { transform: translateY(-3vh) scale(0.92); opacity: 0.75; animation-timing-function: cubic-bezier(.3333333333, 1, .6666666667, 1); }
+  100% { transform: translateY(-6vh) scale(0.84); opacity: 0.5; }
 }
 @keyframes paper-reveal {
   0% { clip-path: inset(100% 0 0 0); animation-timing-function: cubic-bezier(.3333333333, 0, .6666666667, 0); }

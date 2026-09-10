@@ -10,8 +10,7 @@ export async function getServerSideProps({ res }) {
   const { readState } = await import('../../lib/server/storage.mjs');
   const { publicCatalog } = await import('../../lib/server/model.mjs');
   const {privateResponse}=await import('../../lib/server/cache.mjs');
-  const {withImageDimensions}=await import('../../lib/server/image-dimensions.mjs');
   privateResponse(res);
   const catalog=publicCatalog((await readState()).state);
-  return {props:{series:catalog.series,photos:await withImageDimensions(catalog.photos.filter(p=>catalog.series.some(s=>s.coverId===p.id)))}};
+  return {props:{series:catalog.series,photos:catalog.photos.filter(p=>catalog.series.some(s=>s.coverId===p.id))}};
 }

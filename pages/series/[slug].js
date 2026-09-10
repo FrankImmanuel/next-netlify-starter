@@ -12,8 +12,7 @@ export async function getServerSideProps({ params, res }) {
   const catalog = publicCatalog((await readState()).state);
   const series = catalog.series.find(s => s.slug === params.slug);
   const {privateResponse}=await import('../../lib/server/cache.mjs');
-  const {withImageDimensions}=await import('../../lib/server/image-dimensions.mjs');
   privateResponse(res);
   if (!series) return { notFound: true };
-  return { props: { series, photos: await withImageDimensions(series.photoIds.map(id => catalog.photos.find(p => p.id === id))) } };
+  return { props: { series, photos: series.photoIds.map(id => catalog.photos.find(p => p.id === id)) } };
 }
