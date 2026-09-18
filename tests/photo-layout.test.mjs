@@ -54,7 +54,10 @@ test('wide images interrupt pairs and every small pair fits on desktop and mobil
     assert.ok(pair[1].span<=b);
     assert.ok(pair[0].start+pair[0].span<=pair[1].start);
     assert.ok(pair[1].start+pair[1].span<=13);
-    assert.ok(pair[0].mobileStart+pair[0].mobileSpan<=pair[1].mobileStart);
-    assert.ok(pair[1].mobileStart+pair[1].mobileSpan<=7);
+    for(const layout of pair){
+      assert.equal(layout.mobileStart,1);
+      assert.equal(layout.mobileSpan,6);
+      assert.ok(gallerySizes(0,false,layout).startsWith("(max-width: 700px) calc(100vw - 40px)"));
+    }
   }
 });

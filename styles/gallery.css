@@ -1444,15 +1444,19 @@ svg {
 .sequence .work.custom-span.solo-row > .photo-motion { width: 100%; }
 @media (max-width: 700px) {
   .journal-prototype .gallery:not(.sequence) .work.custom-span {
-    grid-column: var(--mobile-start) / span var(--mobile-span);
+    grid-column: 1 / -1;
+    grid-row: auto;
     margin-top: 0;
   }
   .journal-prototype .gallery:not(.sequence) .work.custom-span.solo-row { grid-column: 1 / -1; }
   .gallery .work.custom-span.solo-row > .photo-motion {
     width: calc((100% + 12px) * var(--mobile-span) / 6 - 12px);
   }
-  .journal-prototype .sequence .work.custom-span {
-    width: calc((100% + 12px) * var(--mobile-span) / 6 - 12px);
+  .journal-prototype .sequence .work,
+  .journal-prototype .sequence .work:nth-child(n) {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
   .sequence .work.custom-span.solo-row > .photo-motion { width: 100%; }
 }

@@ -9,8 +9,9 @@ preferred width and the remaining columns. Thus 7+5 stays 7+5, 8+5 becomes
 8+4, and 3+5 stays 3+5. This never changes either image's saved preference.
 Spans 9–12 reserve a complete row and interrupt pairing; a remaining unpaired
 image also stands alone. Spare columns vary the pair's horizontal placement
-using stable photo-ID hashes. Mobile pairs each use three of six columns.
-Series retain their existing one-photo-per-row structure and custom widths.
+using stable photo-ID hashes. Mobile shows one full-width photograph per row.
+Series retain their existing one-photo-per-row structure and custom desktop widths;
+on mobile every series photograph also fills the available width.
 
 The optional `columnSpan` field accepts null (Automatic) or integers 1–12.
 Responsive image `sizes` follows the rendered width. Home annotations stay
