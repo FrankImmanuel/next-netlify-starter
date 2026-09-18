@@ -1,7 +1,7 @@
 import {api, method} from '../../lib/server/auth.mjs';
 import {readState} from '../../lib/server/storage.mjs';
 import {publicCatalog, CmsError} from '../../lib/server/model.mjs';
-import {archivePage, PAGE_SIZE} from '../../lib/seo.mjs';
+import {archivePage, archivePages} from '../../lib/seo.mjs';
 export default api(async(req,res)=>{
   method(req,['GET']);
   const catalog=publicCatalog((await readState()).state);
@@ -9,7 +9,7 @@ export default api(async(req,res)=>{
   const page=archivePage(req.query.page);
   if (!page) throw new CmsError('Invalid archive page.',400);
   const photos=catalog.photos.filter(p=>p.showOnHome);
-  const start=(page-1)*PAGE_SIZE;
-  if (start>=photos.length && page!==1) throw new CmsError('Archive page not found.',404);
-  res.json({photos:photos.slice(start,start+PAGE_SIZE),hasMore:start+PAGE_SIZE<photos.length});
+  const batch=archivePages(photos)[page-1];
+  if (!batch) throw new CmsError('Archive page not found.',404);
+  res.json({photos:batch.photos,hasMore:batch.hasMore});
 });

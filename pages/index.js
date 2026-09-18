@@ -1,9 +1,9 @@
 import {useEffect, useRef, useState} from 'react';
 import {ArrowDown} from 'phosphor-react';
 import {Shell, Gallery} from '../components/GallerySite';
-import {PAGE_SIZE, archivePage, archivePath} from '../lib/seo.mjs';
+import {archivePages, archivePage, archivePath} from '../lib/seo.mjs';
 
-export default function Home({photos, pageNumber, hasMore}) {
+export default function Home({photos, pageNumber, hasMore, offset}) {
   const [items,setItems]=useState(photos);
   const [next,setNext]=useState(hasMore ? pageNumber+1 : null);
   const [busy,setBusy]=useState(false);
@@ -48,7 +48,7 @@ export default function Home({photos, pageNumber, hasMore}) {
   }
   return <Shell title={pageNumber===1?'Photographs':`Photographs · Archive ${pageNumber}`} path={archivePath(pageNumber)} photo={photos[0]} description={pageNumber===1 ? undefined : `Earlier photographs by Samuel Sjöblom. Explore page ${pageNumber} of the ongoing snabb.studio collection.`}>
     <h1 className="sr-only">{pageNumber===1?'Photographs':`Photographs — archive ${pageNumber}`}</h1>
-    <div ref={gallery}><Gallery photos={items} offset={(pageNumber-1)*PAGE_SIZE}/></div>
+    <div ref={gallery}><Gallery photos={items} offset={offset}/></div>
     <div className="archive-end"><span className="eyebrow">An ongoing collection</span>
       {pageNumber>1 && <a className="text-button" href={archivePath(pageNumber-1)}>Newer photographs</a>}
       {next ? <a ref={archiveEnd} className="text-button" href={archivePath(next)} onClick={loadOlder} aria-disabled={busy}>{busy?'Loading photographs…':'View older photographs'} <ArrowDown size={18} aria-hidden="true"/></a> : <p ref={archiveEnd} tabIndex={-1}>{items.length?'You have reached the beginning.':'A new collection is taking shape.'}</p>}
@@ -65,7 +65,7 @@ export async function getServerSideProps({query,res}) {
   if (!pageNumber) return {notFound:true};
   if (query.page==='1') return {redirect:{destination:'/',permanent:true}};
   const all=publicCatalog((await readState()).state).photos.filter(p=>p.showOnHome);
-  const start=(pageNumber-1)*PAGE_SIZE;
-  if (start>=all.length && pageNumber!==1) return {notFound:true};
-  return {props:{photos:all.slice(start,start+PAGE_SIZE),pageNumber,hasMore:start+PAGE_SIZE<all.length}};
+  const page=archivePages(all)[pageNumber-1];
+  if (!page) return {notFound:true};
+  return {props:{photos:page.photos,pageNumber,hasMore:page.hasMore,offset:page.start}};
 }
