@@ -1422,9 +1422,10 @@ svg {
   .header .wordmark:active { opacity: 0.6; }
 }
 
-/* Explicit spans override the automatic composition, without changing its defaults. */
+/* Explicit rows keep each pair together regardless of its alignment. */
 .journal-prototype .gallery:not(.sequence) .work.custom-span {
   grid-column: var(--photo-start) / span var(--photo-span);
+  grid-row: var(--photo-row);
 }
 .journal-prototype .gallery:not(.sequence) .work.custom-span.solo-row {
   grid-column: 1 / -1;

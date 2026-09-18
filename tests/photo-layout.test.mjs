@@ -30,3 +30,31 @@ test('responsive image sizes follow custom spans instead of default positions',(
   assert.equal(gallerySizes(1,false,layout),'(max-width: 700px) calc(100vw - 40px), 86vw');
   assert.equal(gallerySizes(1,true,layout),'(max-width: 700px) calc(100vw - 40px), 76vw');
 });
+
+test('pairs shrink the second image only when needed', async()=>{
+  const {galleryLayouts}=await import('../lib/photo-layout.mjs');
+  for(const [width,expected] of [[5,5],[7,5],[8,4],[3,5]]){
+    const photos=[{id:'first',columnSpan:width},{id:'second',columnSpan:5}];
+    const [a,b]=galleryLayouts(photos);
+    assert.equal(a.span,width);
+    assert.equal(b.span,expected);
+    assert.equal(a.row,b.row);
+    assert.ok(b.start>=a.start+a.span);
+    assert.ok(b.start+b.span<=13);
+    assert.equal(photos[1].columnSpan,5);
+  }
+});
+test('wide images interrupt pairs and every small pair fits on desktop and mobile',async()=>{
+  const {galleryLayouts}=await import('../lib/photo-layout.mjs');
+  const mixed=galleryLayouts([5,9,5,5,12,8,8].map((columnSpan,id)=>({id:String(id),columnSpan})));
+  assert.deepEqual(mixed.map(p=>p.row),[1,2,3,3,4,5,5]);
+  for(let a=1;a<=8;a++)for(let b=1;b<=8;b++){
+    const pair=galleryLayouts([{id:'a',columnSpan:a},{id:'b',columnSpan:b}]);
+    assert.equal(pair[0].row,pair[1].row);
+    assert.ok(pair[1].span<=b);
+    assert.ok(pair[0].start+pair[0].span<=pair[1].start);
+    assert.ok(pair[1].start+pair[1].span<=13);
+    assert.ok(pair[0].mobileStart+pair[0].mobileSpan<=pair[1].mobileStart);
+    assert.ok(pair[1].mobileStart+pair[1].mobileSpan<=7);
+  }
+});

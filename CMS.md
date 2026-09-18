@@ -2,20 +2,19 @@
 
 ## Per-photo column spans
 
-Open a photo in Studio and use **Bildbredd**: Automatic preserves the existing
-composition; 1–12 selects a desktop column span. Spans 9–12 reserve a complete
-row in the home gallery, with the image occupying its selected width inside it.
-Left/center/right alignment is derived from the photo ID, so it varies between
-photos without shifting during hydration, reloads or archive loading. Series
-views also respect explicit widths; their existing one-photo-per-row structure
-is retained. Mobile maps widths to 3–6 of its six columns for readability.
+Open a photo in Studio and use **Bildbredd**: Automatic uses the default width;
+1–12 selects a desktop column span. Consecutive home images with spans 1–8
+share a row. The first keeps its width; the second uses the smaller of its
+preferred width and the remaining columns. Thus 7+5 stays 7+5, 8+5 becomes
+8+4, and 3+5 stays 3+5. This never changes either image's saved preference.
+Spans 9–12 reserve a complete row and interrupt pairing; a remaining unpaired
+image also stands alone. Spare columns vary the pair's horizontal placement
+using stable photo-ID hashes. Mobile pairs each use three of six columns.
+Series retain their existing one-photo-per-row structure and custom widths.
 
 The optional `columnSpan` field accepts null (Automatic) or integers 1–12.
-Responsive image `sizes` follows the chosen width. Explicit-width photos keep
-annotations below the image so margin notes cannot overflow a wide photograph.
-Verified locally: nine-column row isolation on desktop/mobile, no mobile
-horizontal overflow, persisted admin selection, 27 passing tests and a passing
-production build. This feature has not yet been deployed.
+Responsive image `sizes` follows the rendered width. Home annotations stay
+below images so notes cannot overlap the other photograph in a pair.
 
 ## Manual home order and phone placement
 
