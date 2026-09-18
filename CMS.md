@@ -1,5 +1,33 @@
 # Studio: operating the gallery
 
+## Manual home order and phone placement
+
+The photo archive now has up/down buttons that save immediately. Open a photo
+to choose whether it appears on the home page and its exact position. Positions
+include home-selected drafts; drafts only become visible after publication.
+Series membership and each series' own ordering remain independent.
+
+Both admin uploads and the updated iPhone Shortcut can select a series and a
+home placement. Install the updated `snabb-studio-live.shortcut` from Studio →
+iPhone and enter the existing upload key (or create one if it is no longer
+available). Old shortcuts still upload normally with the original defaults.
+Phone uploads remain drafts and open admin for review/publication. A series
+must also be published before its page is public.
+
+Storage adds optional `photoOrder` (all photo IDs) and per-photo `showOnHome`.
+Missing preferences preserve newest-first order and home visibility. New uploads
+default to first, or insert at the requested home position; repeated uploads
+with the same request ID do not move an existing photo. Public archive pagination
+and sitemap home entries exclude series-only photos. Public catalog still
+contains all published photos for series and other public pages. Home exclusion
+is not a privacy control; use unpublish to make a photograph private.
+
+Verification: model/API tests cover order, visibility, draft safety, retries,
+invalid positions and archive filtering. Mobile browser tests used an isolated
+local catalog and verified moving cards, exact placement, and retaining a hidden
+home photo in its series. The generated Shortcut has 29 actions and was signed
+by Apple's CLI; execution on a physical iPhone still needs owner verification.
+
 ## Local review
 
 - `npm install`

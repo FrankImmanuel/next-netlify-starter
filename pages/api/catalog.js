@@ -8,7 +8,8 @@ export default api(async(req,res)=>{
   if (req.query.page===undefined) return res.json(catalog);
   const page=archivePage(req.query.page);
   if (!page) throw new CmsError('Invalid archive page.',400);
+  const photos=catalog.photos.filter(p=>p.showOnHome);
   const start=(page-1)*PAGE_SIZE;
-  if (start>=catalog.photos.length && page!==1) throw new CmsError('Archive page not found.',404);
-  res.json({photos:catalog.photos.slice(start,start+PAGE_SIZE),hasMore:start+PAGE_SIZE<catalog.photos.length});
+  if (start>=photos.length && page!==1) throw new CmsError('Archive page not found.',404);
+  res.json({photos:photos.slice(start,start+PAGE_SIZE),hasMore:start+PAGE_SIZE<photos.length});
 });

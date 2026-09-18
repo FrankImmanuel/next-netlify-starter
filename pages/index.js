@@ -64,7 +64,7 @@ export async function getServerSideProps({query,res}) {
   const pageNumber=archivePage(query.page);
   if (!pageNumber) return {notFound:true};
   if (query.page==='1') return {redirect:{destination:'/',permanent:true}};
-  const all=publicCatalog((await readState()).state).photos;
+  const all=publicCatalog((await readState()).state).photos.filter(p=>p.showOnHome);
   const start=(pageNumber-1)*PAGE_SIZE;
   if (start>=all.length && pageNumber!==1) return {notFound:true};
   return {props:{photos:all.slice(start,start+PAGE_SIZE),pageNumber,hasMore:start+PAGE_SIZE<all.length}};
