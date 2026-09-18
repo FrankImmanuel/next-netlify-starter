@@ -1,5 +1,22 @@
 # Studio: operating the gallery
 
+## Per-photo column spans
+
+Open a photo in Studio and use **Bildbredd**: Automatic preserves the existing
+composition; 1–12 selects a desktop column span. Spans 9–12 reserve a complete
+row in the home gallery, with the image occupying its selected width inside it.
+Left/center/right alignment is derived from the photo ID, so it varies between
+photos without shifting during hydration, reloads or archive loading. Series
+views also respect explicit widths; their existing one-photo-per-row structure
+is retained. Mobile maps widths to 3–6 of its six columns for readability.
+
+The optional `columnSpan` field accepts null (Automatic) or integers 1–12.
+Responsive image `sizes` follows the chosen width. Explicit-width photos keep
+annotations below the image so margin notes cannot overflow a wide photograph.
+Verified locally: nine-column row isolation on desktop/mobile, no mobile
+horizontal overflow, persisted admin selection, 27 passing tests and a passing
+production build. This feature has not yet been deployed.
+
 ## Manual home order and phone placement
 
 The photo archive now has up/down buttons that save immediately. Open a photo

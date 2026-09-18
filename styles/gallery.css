@@ -1421,3 +1421,37 @@ svg {
   }
   .header .wordmark:active { opacity: 0.6; }
 }
+
+/* Explicit spans override the automatic composition, without changing its defaults. */
+.journal-prototype .gallery:not(.sequence) .work.custom-span {
+  grid-column: var(--photo-start) / span var(--photo-span);
+}
+.journal-prototype .gallery:not(.sequence) .work.custom-span.solo-row {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+.gallery .work.custom-span.solo-row > .photo-motion {
+  width: calc((100% + 2vw) * var(--photo-span) / 12 - 2vw);
+  margin-left: var(--photo-left);
+  margin-right: var(--photo-right);
+}
+.journal-prototype .sequence .work.custom-span {
+  width: calc(100% * var(--photo-span) / 12);
+  margin-left: var(--photo-left);
+  margin-right: var(--photo-right);
+}
+.sequence .work.custom-span.solo-row > .photo-motion { width: 100%; }
+@media (max-width: 700px) {
+  .journal-prototype .gallery:not(.sequence) .work.custom-span {
+    grid-column: var(--mobile-start) / span var(--mobile-span);
+    margin-top: 0;
+  }
+  .journal-prototype .gallery:not(.sequence) .work.custom-span.solo-row { grid-column: 1 / -1; }
+  .gallery .work.custom-span.solo-row > .photo-motion {
+    width: calc((100% + 12px) * var(--mobile-span) / 6 - 12px);
+  }
+  .journal-prototype .sequence .work.custom-span {
+    width: calc((100% + 12px) * var(--mobile-span) / 6 - 12px);
+  }
+  .sequence .work.custom-span.solo-row > .photo-motion { width: 100%; }
+}
